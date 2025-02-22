@@ -14,8 +14,6 @@ import DashboardPage from "./pages/DashboardPage";
 import SettingsPage from "./pages/SettingsPage";
 
 function App() {
-  const basePath = '/katarisoft';
-
   return (
     <SensorsDataProvider>
       <div className='flex h-screen bg-gray-900 text-gray-100 overflow-hidden'>
@@ -26,12 +24,12 @@ function App() {
 
         <Sidebar />
         <Routes>
-          <Route path={`${basePath}/`} element={<HomePage />} />
-          <Route path={`${basePath}/realtime`} element={<RealTimePage />} />
-          <Route path={`${basePath}/historical`} element={<HistoricalPage />} />
-          <Route path={`${basePath}/users`} element={<UsersPage />} />
-          <Route path={`${basePath}/dashboard`} element={<DashboardPage />} />
-          <Route path={`${basePath}/settings`} element={<SettingsPage />} />
+          <Route path={`/`} element={<HomePage />} />
+          <Route path={`/realtime`} element={<RealTimePage />} />
+          <Route path={`/historical`} element={<HistoricalPage />} />
+          <Route path={`/users`} element={<UsersPage />} />
+          <Route path={`/dashboard`} element={<DashboardPage />} />
+          <Route path={`/settings`} element={<SettingsPage />} />
         </Routes>
       </div>
     </SensorsDataProvider>
