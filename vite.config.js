@@ -2,16 +2,15 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
-export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/katarisoft/' : '/',
+export default defineConfig({
   plugins: [react()],
   build: {
     outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,
   },
   server: {
-    proxy: mode === 'development' ? {
+    proxy: {
       '/api': 'http://localhost:3000',
-    } : {},
+    },
   },
-}));
+});
